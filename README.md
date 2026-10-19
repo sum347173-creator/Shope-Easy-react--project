@@ -49,10 +49,10 @@ Shope-Easy-react--project/
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](homepage.png.)
+![Homepage](screenshots/homepage.png.png)
 
 ### Product Page
-![Product Page](productpage.png)
+![Product Page](screenshots/productpage.png.png)
 
 ## 🚀 How to Run
 
