@@ -77,7 +77,7 @@ function ProductCard({ product }) {
     e.stopPropagation();
     if (!localStorage.getItem('token')) { navigate('/login'); return; }
     try {
-      await axios.post(`http://localhost:8080/api/wishlist/toggle/${product.id}`,{},{ headers:authHdr() });
+     await axios.post(`https://shopeasy-backend-xe45.onrender.com/api/wishlist/toggle/${product.id}`,{},{ headers:authHdr() });
       setLiked(l=>!l);
     } catch { console.log('wishlist err'); }
   };
@@ -331,7 +331,7 @@ export default function BuyerDashboard() {
 
   useEffect(()=>{
     const t=localStorage.getItem('token');
-    axios.get('http://localhost:8080/api/products',{ headers:t?{Authorization:`Bearer ${t}`}:{} })
+   axios.get('https://shopeasy-backend-xe45.onrender.com/api/products',{ headers:t?{Authorization:`Bearer ${t}`}:{}})
       .then(r=>{ setProducts(Array.isArray(r.data)?r.data:(r.data?.content||[])); })
       .catch(e=>console.error(e))
       .finally(()=>setLoading(false));

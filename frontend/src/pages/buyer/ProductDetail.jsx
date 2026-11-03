@@ -153,7 +153,7 @@ const ProductDetail = () => {
     setLoading(true);
     const token   = localStorage.getItem("token");
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    fetch(`http://localhost:8080/api/products/${id}`, { headers })
+    fetch(`https://shopeasy-backend-xe45.onrender.com/api/products/${id}`, { headers })
       .then(res => { if (!res.ok) throw new Error(); return res.json(); })
       .then(data => { setProduct(data?.id ? data : null); setLoading(false); })
       .catch(() => { setProduct(null); setLoading(false); });
